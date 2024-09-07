@@ -27,7 +27,7 @@ public:
 	bool searchForEmployee(int id);
 	
 
-	bool editEmployee(Employee &e, string newname, double newsalary);
+	bool editEmployee(Employee &e, string newname, double newsalary, string newpass);
 	
 
 	 void listAllEmployees();

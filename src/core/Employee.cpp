@@ -24,14 +24,20 @@
 		return true;
 	}
 
-	void Employee::setsalary(double salary) {
+	bool Employee::setsalary(double salary) {
 		if (Validation::validatesalary(salary))
 		{
 			this->salary = salary;
+			return true;
 		}
+		return false;
 	}
 	double Employee::getsalary() {
 		return this->salary;
+	}
+
+	vector<Client*>* Employee::getClients() {
+		return this->clients;
 	}
 
 	bool Employee::addclient(Client* Client){
@@ -39,9 +45,7 @@
 		return true;
 	}
 
-       vector<Client*>* Employee::getClients() {
-	return this->clients;
-   }
+ 
 
    bool Employee::searchClientById(int id) {
 	   for (int i = 0; i < clients->size(); i++) {
@@ -61,11 +65,12 @@
 		}
 	}
 
-	bool Employee::editClientInfo(Client &c, string newname , double newbalance) {
+	bool Employee::editClientInfo(Client &c, string newname , double newbalance,string newpass) {
 		for (int i = 0; i < clients->size(); i++) {
 			if (clients->at(i)->getid() == c.getid()) {
 				clients->at(i)->setname(newname);
 				clients->at(i)->setBalance(newbalance);
+				clients->at(i)->setpassword(newpass);
 				return true;
 			}
 		}

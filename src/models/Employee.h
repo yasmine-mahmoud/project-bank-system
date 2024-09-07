@@ -38,7 +38,7 @@ public:
 	void listallclients();
 	
 
-	bool editClientInfo(Client &c, string newname, double newbalance);
+	bool editClientInfo(Client &c, string newname, double newbalance, string newpass);
 
 
 	void dispaly();

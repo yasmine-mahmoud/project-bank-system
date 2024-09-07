@@ -39,11 +39,12 @@ int Admin::adminCounter = 22000;
 		return false;
 	}
 
-	bool Admin::editEmployee(Employee &e, string newname, double newsalary) {
+	bool Admin::editEmployee(Employee &e, string newname, double newsalary, string newpass) {
 		for (int i = 0; i < employees->size(); i++) {
 			if (employees->at(i)->getid() == e.getid()) {
 				employees->at(i)->setname(newname);
 				employees->at(i)->setsalary(newsalary);
+				employees->at(i)->setpassword(newpass);
 				return true;
 			}
 		}

@@ -39,6 +39,10 @@
 		return true;
 	}
 
+       vector<Client*>* Employee::getClients() {
+	return this->clients;
+   }
+
    bool Employee::searchClientById(int id) {
 	   for (int i = 0; i < clients->size(); i++) {
 		   if (this->clients->at(i)->getid() == id) {

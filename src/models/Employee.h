@@ -28,6 +28,8 @@ public:
 	
 	double getsalary();
 
+         vector<Client*>* getClients();
+
 	bool addclient(Client* Client);
 
 
